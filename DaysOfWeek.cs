@@ -1,6 +1,6 @@
 ﻿using System.Text;
-
 Console.OutputEncoding = Encoding.UTF8;
+
 while (true)//щоб постійно не перезапускати консоль
 {
     Console.WriteLine("Введіть число від 1-7");

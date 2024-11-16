@@ -21,24 +21,25 @@ while (true)//щоб не перезапускати постійно консо
     switch (operation)
     {
         case '+':
-         Console.WriteLine($"Результат: {firstNumber + secondNumber}");
+                    Console.WriteLine($"Результат: {firstNumber + secondNumber}");
             break;
 
         case '-': 
-         Console.WriteLine($"Результат: {firstNumber - secondNumber}");
+                    Console.WriteLine($"Результат: {firstNumber - secondNumber}");
             break;
         case '*':
-         Console.WriteLine($"Результат: {firstNumber * secondNumber}"); 
+                    Console.WriteLine($"Результат: {firstNumber * secondNumber}"); 
             break;
         case '/': if (secondNumber == 0)
             {
-         Console.WriteLine("Ділити на нуль не можна");
+                    Console.WriteLine("Ділити на нуль не можна");
             }
             else
             {
-         Console.WriteLine($"Результат: {firstNumber / secondNumber}");
+                    Console.WriteLine($"Результат: {firstNumber / secondNumber}");
             }
-                break;
+            break;
+       
             }
     
 }
