@@ -19,26 +19,26 @@ while (true)//щоб не перезапускати постійно консо
     switch (operation)
     {
         case "+":
-         Console.WriteLine($"Результат: {firstNumber + secondNumber}");
+            Console.WriteLine($"Результат: {firstNumber + secondNumber}");
             break;
-        case "-": 
-         Console.WriteLine($"Результат: {firstNumber - secondNumber}");
+        case "-":
+            Console.WriteLine($"Результат: {firstNumber - secondNumber}");
             break;
         case "/":
-            try
-            {
-                Console.WriteLine($"Результат: {firstNumber / secondNumber}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("На нуль ділити не можна: " + ex.Message);
+             try
+             {
+            Console.WriteLine($"Результат: {firstNumber / secondNumber}");
+             }
+              catch (DivideByZeroException ex)
+             {
+            Console.WriteLine("На нуль ділити не можна/" + ex.Message);
             }
             break;
         case "*":
-         Console.WriteLine($"Результат: {firstNumber * secondNumber}"); 
+            Console.WriteLine($"Результат: {firstNumber * secondNumber}"); 
             break;
         default: 
-         Console.WriteLine("Введена не математична дія");
+            Console.WriteLine("Введена не математична дія");
             break;
             }
 }
