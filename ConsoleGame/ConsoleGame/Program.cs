@@ -1,7 +1,7 @@
 ﻿using System.Text;
 Console.OutputEncoding = Encoding.UTF8;
 
-string[,] game = 
+string[,] game =
         {
             { "1", "2", "3" },
             { "4", "5", "6" },
@@ -11,15 +11,15 @@ int playerTurn = 0;
 bool gameOver = false;
 
 Console.WriteLine("Старт гри ");
-    for (int i = 0; i < game.GetLength(0); i++)
+for (int i = 0; i < game.GetLength(0); i++)
+{
+    for (int j = 0; j < game.GetLength(1); j++)
     {
-        for (int j = 0; j < game.GetLength(1); j++)
-        {
         Console.Write($" {game[i, j]} |");
     }
-        Console.WriteLine();
-        Console.WriteLine("------------");
-        }
+    Console.WriteLine();
+    Console.WriteLine("------------");
+}
 Console.WriteLine("Гравець 1, введіть свій нік");
 Console.ForegroundColor = ConsoleColor.Cyan;
 string firstPlayerName = Console.ReadLine();
@@ -98,7 +98,7 @@ while (!gameOver)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Гравець {firstPlayerName} виграв!!! ");
-                Console.ResetColor ();
+                Console.ResetColor();
                 gameOver = true;
                 break;
             }
@@ -107,7 +107,7 @@ while (!gameOver)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{firstPlayerName} місце вже зайняте!");
-            Console.ResetColor();   
+            Console.ResetColor();
             continue;
         }
         bool isDraw = true;
@@ -138,7 +138,7 @@ while (!gameOver)
         continue;
     }
     if (gameOver)
-            break;
+        break;
 
     bool checkMove = false;
     while (!checkMove)
@@ -156,7 +156,7 @@ while (!gameOver)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Введене не числове значення!");
-            Console.ResetColor();   
+            Console.ResetColor();
             continue;
         }
         if (input >= 1 && input <= 9)
@@ -164,9 +164,9 @@ while (!gameOver)
             int row1 = (input - 1) / 3;
             int col1 = (input - 1) % 3;
 
-            if (row1>= 0 && row1 < game.GetLength(0) && col1 >= 0 && col1 < game.GetLength(1) &&
+            if (row1 >= 0 && row1 < game.GetLength(0) && col1 >= 0 && col1 < game.GetLength(1) &&
                 game[row1, col1] != "X" && game[row1, col1] != "0")
-            { 
+            {
                 string secondPlayer = "0";
                 checkMove = true;
                 game[row1, col1] = secondPlayer;
@@ -206,7 +206,7 @@ while (!gameOver)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"Гравець {secondPlayerName} виграв!!! ");
-                    Console.ResetColor();   
+                    Console.ResetColor();
                     gameOver = true;
                     break;
                 }
@@ -215,7 +215,7 @@ while (!gameOver)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"{secondPlayerName} місце вже зайняте!");
-                Console.ResetColor();   
+                Console.ResetColor();
                 continue;
             }
 
@@ -238,7 +238,7 @@ while (!gameOver)
                 Console.ResetColor();
                 gameOver = true;
             }
-    }
+        }
         else
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -248,4 +248,3 @@ while (!gameOver)
         }
     }
 }
-   
