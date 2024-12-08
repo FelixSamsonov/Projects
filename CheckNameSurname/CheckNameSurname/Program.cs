@@ -33,3 +33,17 @@ namespace CheckNameSurname
         }
     }
 }
+
+//namespace RemoveSpaces
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Введіть текст");
+//            string inputText = Console.ReadLine();
+//            string outputText = inputText.Replace(" ", "");
+//            Console.WriteLine(outputText);
+//        }
+//    }
+//}
