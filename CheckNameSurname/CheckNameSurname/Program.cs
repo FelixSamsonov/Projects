@@ -8,24 +8,24 @@ namespace CheckNameSurname
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-
-            Console.WriteLine("Ведіть ваше ім'я");
-            string inputName = Console.ReadLine();
-            Console.WriteLine("Введіть ваше призвіще");
-            string inputSurname = Console.ReadLine();
-            if (!string.IsNullOrEmpty(inputName) && !string.IsNullOrEmpty(inputSurname))
+            Console.WriteLine("Ведіть ваше ім'я та призвіще");
+            string inputNameSurname = Console.ReadLine();
+            if (!string.IsNullOrEmpty(inputNameSurname) && !string.IsNullOrEmpty(inputNameSurname))
             {
-                char[] firstName = inputName.ToCharArray();
-                char[] firstSurname = inputSurname.ToCharArray();
-                char firstLetterName = firstName[0];
-                char firstLetterSurname = firstSurname[0];
-                if (firstLetterName.ToString() == firstLetterSurname.ToString())
+                char[] nameSurname = inputNameSurname.ToCharArray();
+                for (int i = 0; i < nameSurname.Length; i++)
                 {
-                    Console.WriteLine("Прізвище починається на ту ж літеру, що і ім’я");
-                }
-                else
-                {
-                    Console.WriteLine("Прізвище не починається на ту ж літеру, що і ім’я");
+                    if (nameSurname[i] == ' ')
+                    {
+                        if (nameSurname[0] == nameSurname[i + 1])
+                        {
+                            Console.WriteLine("Прізвище починається на ту ж літеру, що і ім’я");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Прізвище не починається на ту ж літеру, що і ім’я");
+                        }
+                    }
                 }
 
             }
