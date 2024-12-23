@@ -16,7 +16,7 @@ namespace toDoList
 
             while (true)
             {
-                Console.WriteLine($"Виберіть дію: \n '1' - Додати справу \n '2' - Відмітити виконання \n '3' - Видалити справу \n '4' - Показати список справ \n '5' - Вийти");
+                ShowMenu();
                 string actions = Console.ReadLine();
 
                 switch (actions)
@@ -103,6 +103,15 @@ namespace toDoList
             Console.Write("Вітаю! Для створення списку справ введіть назву списку: ");
             string nameOfList = Console.ReadLine();
             Console.WriteLine($"Список справ під назвою '{nameOfList}' створено.");
+        }
+        static void ShowMenu()
+        {
+            Console.WriteLine("\nВиберіть дію:");
+            Console.WriteLine(" '1' - Додати справу");
+            Console.WriteLine(" '2' - Відмітити виконання");
+            Console.WriteLine(" '3' - Видалити справу");
+            Console.WriteLine(" '4' - Показати список справ");
+            Console.WriteLine(" '5' - Вийти");
         }
     }
 }
