@@ -9,7 +9,7 @@ namespace bankAccount
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             BankAccount myBankAccount = new BankAccount();
-            Console.Write($"Вітаю! Для створення банківського рахунку потрібно ініціалізуватися та поповнити рахунок. \nІВведіть ваше призвіще та ім'я: ");
+            Console.Write($"Вітаю! Для створення банківського рахунку потрібно ініціалізуватися та поповнити рахунок. \nВведіть ваше призвіще та ім'я: ");
             myBankAccount.NameOfAccount = Console.ReadLine();
             Console.WriteLine($"На вашому рахунку '{myBankAccount.NameOfAccount}' наразі: {myBankAccount.Balance} грн.");
             Console.WriteLine("Для активації банківського акаунту, його треба поповнити на суму від 1000 грн.");
@@ -35,10 +35,10 @@ namespace bankAccount
 
             while (true)
             {
-                Console.WriteLine("\nОберіть дію: \n'1' - Поповнити рахунок\n'2' - Зняти кошти\n'3' - Вийти");
+                Console.WriteLine("\nОберіть дію: \n'1' - Поповнити рахунок\n'2' - Зняти кошти\n'3' - Показати залишок на рахунку\n'4' - Вийти");
                 string operation = Console.ReadLine();
 
-                if (operation == "3")
+                if (operation == "4")
                 {
                     Console.WriteLine("Дякуємо за використання банківської системи. До побачення!");
                     break;
@@ -54,13 +54,18 @@ namespace bankAccount
         public string NameOfAccount { get; set; }
         private decimal balance;
         public decimal Balance => balance;
+        
+        public void ShowBalance ()
+        {
+            Console.WriteLine($"На вашому рахунку {balance} грн.");
+        }
 
         public void Deposit(int amount)
         {
             if (amount > 0)
             {
                 balance += amount;
-                Console.WriteLine($"Рахунок поповнено на {amount} грн, сума на рахунку складає {balance} грн.");
+                Console.WriteLine($"Рахунок поповнено на {amount} грн.");
             }
             else
                 Console.WriteLine("Сума поповнення має бути більше 0.");
@@ -71,10 +76,10 @@ namespace bankAccount
             if (amount > 0 && amount <= balance)
             {
                 balance -= amount;
-                Console.WriteLine($"Ви зняли {amount} грн, залишок на рахунку: {balance} грн.");
+                Console.WriteLine($"Ви зняли {amount} грн.");
             }
             else
-                Console.WriteLine($"Грошей на рахунку недостатньо для зняття {amount} грн, залишок: {balance} грн.");
+                Console.WriteLine($"Грошей на рахунку недостатньо для зняття {amount} грн.");
         }
 
         public void ChangeOperation(string operation)
@@ -103,6 +108,9 @@ namespace bankAccount
                     {
                         Console.WriteLine("Введена некоректна сума.");
                     }
+                    break;
+                case "3":
+                    ShowBalance();
                     break;
 
                 default:
