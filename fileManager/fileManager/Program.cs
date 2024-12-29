@@ -1,6 +1,4 @@
-﻿
-
-using System.Text;
+﻿using System.Text;
 
 namespace fileManager
 {
@@ -27,15 +25,11 @@ namespace fileManager
             }
             catch (UnauthorizedAccessException)
             {
-                Console.WriteLine("Помилка доступу до файлу. Перевірте дозволи.");
+                Console.WriteLine("Помилка доступу до файлу");
             }
             catch (IOException ex)
             {
                 Console.WriteLine($"Сталася помилка: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Несподівана помилка: {ex.Message}");
             }
         }
     }
